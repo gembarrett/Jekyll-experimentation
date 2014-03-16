@@ -1,0 +1,6 @@
+name: new GemBarrett.com
+markdown: redcarpet
+pygments: true
+
+include: ['.htaccess']
+keep_files: ['.git']

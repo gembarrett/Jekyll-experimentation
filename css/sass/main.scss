@@ -1,0 +1,310 @@
+/* A modified default Jekyll theme
+/*
+/* Improvements include:
+/*
+/* 1. Responsive Template: Added media-queries so that it works well
+/*    on a wide-range of screens.
+/*
+
+The MIT License (MIT)
+
+Copyright (c) 2013 Kashyap
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+/*****************************************************************************/
+/*
+/* Variables and imports
+/*
+/*****************************************************************************/
+
+@import '../stylesheets/bourbon/bourbon';
+$monospace-fonts: "Inconsolata", Consolas, "Courier New", monospace;
+$code-border: 1px solid #ddd;
+$code-background: #eef;
+
+
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+/* Global Reset */
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+  background-color: #FFF;
+  font-size: 130%;
+  font-family: calluna, Calluna, Georgia;
+  font-weight: 300;
+  line-height: 1.45em;
+  padding: 0 2em;
+  text-rendering: optimizeLegibility;
+  color: #555;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  font-family: adelle, Adelle, Georgia;
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 0.5em;
+  line-height: 1.4em;
+}
+
+h1 {
+  font-size: 170%;
+  margin-top: 1em;
+}
+
+h2 {
+  font-size: 150%;
+  margin-top: 1em;
+}
+
+h3 {
+  font-size: 130%;
+  margin-top: 3.25em;
+}
+
+h4 {
+  font-size: 110%;
+  margin-top: 2em;
+}
+
+h5 {
+  font-size: 100%;
+  margin-top: 1.5em;
+}
+
+p {
+  margin: 0.5em 0 1em;
+}
+
+a {
+  color: #00a;
+  &:hover   { color: #000; }
+  &:visited { color: #a0a; }
+}
+
+blockquote {
+  padding: 0.1em 1.3em;
+  background: #fafafa;
+  border-left: 5px #81E26D solid;
+  color: #666;
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+  li {
+    line-height: 1.75em;
+    margin-bottom: 1em;
+  }
+  span {
+    color: #aaa;
+    font-family: $monospace-fonts;
+    font-size: 80%;
+    display: list-item;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  margin: auto;
+  max-width: 36.875em;
+  padding: 0 1em;
+  color: #111;
+  .header {
+    a {
+      font-weight: bold;
+      text-decoration: none;
+    }
+    h1.title {
+      display: inline-block;
+      font-size: 180%;
+      a {
+        color: #a00;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+    a.extra {
+      color: #aaa;
+      margin-left: 1em;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+  .meta {
+    color: #aaa;
+  }
+  .footer {
+    font-size: 80%;
+    color: #666;
+    border-top: 4px solid #eee;
+    margin-top: 2em;
+    overflow: hidden;
+    .contact {
+      float: left;
+      margin-right: 3em;
+      a {
+        color: #8085C1;
+      }
+    }
+    .rss {
+      margin-top: 1.1em;
+      margin-right: -0.2em;
+      float: right;
+      img {
+        border: 0;
+      }
+    }
+  }
+}
+
+pre {
+  font-family: 'PT Mono', $monospace-fonts;
+  overflow: auto;
+  margin: 1em auto;
+}
+
+code {
+  font-family: 'PT Mono', $monospace-fonts;
+}
+
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+/* standard */
+.post {
+  ul, ol {
+    margin-left: 1.35em;
+  }
+  code {
+    border: $code-border;
+    background-color: $code-background;
+    font-size: 0.7em;
+  }
+  pre {
+    border: $code-border;
+    background-color: $code-background;
+    line-height: 1em;
+    padding: 0.2em 0.5em;
+    code {
+      border: none;
+    }
+  }
+}
+
+/* terminal */
+.post {
+  text-align: justify;
+  pre.terminal {
+    border: 1px solid #000;
+    background-color: #333;
+    color: #FFF;
+    code {
+      background-color: #333;
+    }
+  }
+}
+
+/************************************************************************/
+/*    Media Queries
+/*
+/************************************************************************/
+
+
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 130%;
+    padding: 0 4em;
+  }
+  .post code {
+    font-size: 85%;
+  }
+
+  pre code {
+    line-height: 1.6em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 125%;
+    padding: 0 1.5em;
+  }
+
+  .post code, pre code {
+    font-size: 80%;
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 120%;
+    padding: 0 0.5em;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 1em;
+  }
+
+  .contact {
+    width: 100%;
+  }
+
+  .post code {
+    font-size: 85%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    padding: 0;
+  }
+}
